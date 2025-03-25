@@ -152,8 +152,9 @@ output "systems" {
 ###  Resource
 
 - [saviynt_security_system_resource](docs/resources/security_system_resource.md): Manages lifecycle (create, update, read) of security systems. Supports workflows, connectors, password policies and more.
-- [saviynt_endpoints_resource](docs/data-sources/security_systems_datasource.md): For managing endpoints definitions used by security systems.
-- [saviynt_connection_resouce](docs/resources/test_connection.md): For managing endpoints like AD, REST, etc. tied to security systems.
+- [saviynt_endpoints_resource](docs/resources/endpoint_resource.md): For managing endpoints definitions used by security systems.
+- [saviynt_ad_connection_resource](docs/resources/ad_connection_resource.md): For managing AD connections.
+- [saviynt_rest_connection_resource](docs/resources/rest_connection_resource.md): For managing REST connections.
 
 ###  Data Source
 
