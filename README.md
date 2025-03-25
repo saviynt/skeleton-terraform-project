@@ -196,6 +196,11 @@ terraform workspaces select <workspace-name>
 ```bash
 terraform apply -var-file="<values.tfvars>"
 ```
+
+Here is a sample invocation example:
+```bash
+terraform apply -var-file="dev.tfvars"
+```
 ---
 
 ##  License
