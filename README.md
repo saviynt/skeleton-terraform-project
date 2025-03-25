@@ -178,7 +178,24 @@ terraform plan
 terraform apply
 ```
 
-## Terra
+## Terraform Workspaces
+
+1. To create a new workspace
+
+```bash
+terraform workspaces new <workspace-name>
+```
+
+2. To select a workspace
+
+```bash
+terraform workspaces select <workspace-name>
+```
+
+3. To apply changes to an environment
+```bash
+terraform apply -var-file="<values.tfvars>"
+```
 ---
 
 ##  License
