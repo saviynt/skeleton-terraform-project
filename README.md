@@ -25,6 +25,46 @@ Following connectors are available:
 
 ---
 
+## Directory Structure
+.
+├── LICENSE
+├── README.md
+├── docs
+│   ├── data-sources
+│   │   ├── datasource_endpoints.md
+│   │   └── datasource_security_systems.md
+│   ├── index.md
+│   └── resources
+│       ├── resource_ad_connection.md
+│       ├── resource_endpoint.md
+│       ├── resource_rest_connection.md
+│       └── resource_security_system.md
+├── environment
+│   ├── dev
+│   │   ├── dev.tf
+│   │   ├── dev.tfvars
+│   │   └── variable.tf
+│   ├── prod
+│   │   ├── prod.tf
+│   │   ├── prod.tfvars
+│   │   └── variable.tf
+│   └── test
+│       ├── test.tf
+│       ├── test.tfvars
+│       └── variable.tf
+├── provider
+│   └── terraform-provider-saviynt_v1.0.0
+├── provider.tf
+└── resources
+    ├── connections
+    │   └── sample_connector.tf
+    ├── endpoints
+    │   └── sample_endpoint.tf
+    └── security_systems
+        └── sample_security_system.tf
+
+
+
 ##  Requirements
 
 - Terraform version `>= 1.8+`
