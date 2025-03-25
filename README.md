@@ -159,6 +159,7 @@ output "systems" {
 ###  Data Source
 
 - [saviynt_security_systems_datasource](docs/data-sources/security_systems_datasource.md): Retrieves a list of configured security systems filtered by systemname, connection_type, etc.
+- [saviynt_datasource_endpoints](docs/data-sources/datasource_endpoints.md): Retrieves a list of endpoints.
 
 ---
 
