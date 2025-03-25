@@ -151,13 +151,13 @@ output "systems" {
 
 ###  Resource
 
-- [saviynt_security_system_resource](https://github.com/saviynt/terraform-provider-saviynt/blob/MVP%23V1/docs/resources/security_system_resource.md): Manages lifecycle (create, update, read) of security systems. Supports workflows, connectors, password policies and more.
-- [saviynt_endpoints_resource](https://github.com/saviynt/terraform-provider-saviynt/blob/MVP%23V1/docs/data-sources/security_systems_datasource.md): For managing endpoints definitions used by security systems.
-- [saviynt_connection_resouce](https://github.com/saviynt/terraform-provider-saviynt/blob/MVP%23V1/docs/resources/test_connection.md): For managing endpoints like AD, REST, etc. tied to security systems.
+- [saviynt_security_system_resource](docs/resources/security_system_resource.md): Manages lifecycle (create, update, read) of security systems. Supports workflows, connectors, password policies and more.
+- [saviynt_endpoints_resource](docs/data-sources/security_systems_datasource.md): For managing endpoints definitions used by security systems.
+- [saviynt_connection_resouce](docs/resources/test_connection.md): For managing endpoints like AD, REST, etc. tied to security systems.
 
 ###  Data Source
 
-- [saviynt_security_systems_datasource](https://github.com/saviynt/terraform-provider-saviynt/blob/MVP%23V1/docs/data-sources/security_systems_datasource.md): Retrieves a list of configured security systems filtered by systemname, connection_type, etc.
+- [saviynt_security_systems_datasource](docs/data-sources/security_systems_datasource.md): Retrieves a list of configured security systems filtered by systemname, connection_type, etc.
 
 ---
 
@@ -168,7 +168,7 @@ output "systems" {
 terraform init
 ```
 
-2. To plan the changes form the .tf file and .tfstate file
+2. To plan the changes from the .tf file and .tfstate file
 ```bash
 terraform plan
 ```
@@ -178,8 +178,7 @@ terraform plan
 terraform apply
 ```
 
-
-
+## Terra
 ---
 
 ##  License
