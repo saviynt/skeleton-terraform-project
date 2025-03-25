@@ -26,6 +26,7 @@ Following connectors are available:
 ---
 
 ## Directory Structure
+```
 .
 ├── LICENSE
 ├── README.md
@@ -63,7 +64,7 @@ Following connectors are available:
     └── security_systems
         └── sample_security_system.tf
 
-
+```
 
 ##  Requirements
 
