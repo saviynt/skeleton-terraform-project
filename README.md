@@ -151,14 +151,14 @@ output "systems" {
 
 ###  Resource
 
-- [saviynt_security_system_resource](docs/resources/security_system_resource.md): Manages lifecycle (create, update, read) of security systems. Supports workflows, connectors, password policies and more.
-- [saviynt_endpoints_resource](docs/resources/endpoint_resource.md): For managing endpoints definitions used by security systems.
-- [saviynt_ad_connection_resource](docs/resources/ad_connection_resource.md): For managing AD connections.
-- [saviynt_rest_connection_resource](docs/resources/rest_connection_resource.md): For managing REST connections.
+- [saviynt_security_system_resource](docs/resources/resource_security_system.md): Manages lifecycle (create, update, read) of security systems. Supports workflows, connectors, password policies and more.
+- [saviynt_endpoints_resource](docs/resources/resource_endpoint.md): For managing endpoints definitions used by security systems.
+- [saviynt_ad_connection_resource](docs/resources/resource_ad_connection.md): For managing AD connections.
+- [saviynt_rest_connection_resource](docs/resources/resource_rest_connection.md): For managing REST connections.
 
 ###  Data Source
 
-- [saviynt_security_systems_datasource](docs/data-sources/security_systems_datasource.md): Retrieves a list of configured security systems filtered by systemname, connection_type, etc.
+- [saviynt_security_systems_datasource](docs/data-sources/datasource_security_systems.md): Retrieves a list of configured security systems filtered by systemname, connection_type, etc.
 - [saviynt_datasource_endpoints](docs/data-sources/datasource_endpoints.md): Retrieves a list of endpoints.
 
 ---
