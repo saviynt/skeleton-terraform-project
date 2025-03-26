@@ -31,36 +31,39 @@ Following connectors are available:
 ├── LICENSE
 ├── README.md
 ├── docs
-│   ├── data-sources
-│   │   ├── datasource_endpoints.md
-│   │   └── datasource_security_systems.md
-│   ├── index.md
-│   └── resources
-│       ├── resource_ad_connection.md
-│       ├── resource_endpoint.md
-│       ├── resource_rest_connection.md
-│       └── resource_security_system.md
+│   ├── data-sources
+│   │   ├── datasource_endpoints.md
+│   │   └── security_systems_datasource.md
+│   ├── index.md
+│   └── resources
+│       ├── ad_connection_resource.md
+│       ├── endpoint_resource.md
+│       ├── rest_connection_resource.md
+│       └── security_system_resource.md
 ├── environment
-│   ├── dev
-│   │   ├── dev.tf
-│   │   ├── dev.tfvars
-│   │   └── variable.tf
-│   ├── prod
-│   │   ├── prod.tf
-│   │   ├── prod.tfvars
-│   │   └── variable.tf
-│   └── test
-│       ├── test.tf
-│       ├── test.tfvars
-│       └── variable.tf
+│   ├── dev
+│   │   ├── dev.tf
+│   │   ├── dev.tfvars
+│   │   └── variable.tf
+│   ├── prod
+│   │   ├── prod.tf
+│   │   ├── prod.tfvars
+│   │   └── variable.tf
+│   └── test
+│       ├── test.tf
+│       ├── test.tfvars
+│       └── variable.tf
 ├── provider
-│   └── terraform-provider-saviynt_v1.0.0
+│   └── terraform-provider-saviynt_v0.1.0
 ├── provider.tf
 └── resources
     ├── connections
-    │   └── sample_connector.tf
+    │   ├── ad_sample_connector.tf
+    │   ├── terraform.tfstate
+    │   ├── terraform.tfvars
+    │   └── variables.tf
     ├── endpoints
-    │   └── sample_endpoint.tf
+    │   └── sample_endpoint.tf
     └── security_systems
         └── sample_security_system.tf
 
@@ -114,8 +117,8 @@ To use this provider, follow these steps:
 Copy the provider binary from provider directory to the Go bin directory: 
 
 ```sh
-cp provider/terraform-provider-saviynt_v1.0.0 <GOBIN PATH>
-chmod +x GOBIN/terraform-provider-saviynt_v1.0.0
+cp provider/terraform-provider-saviynt_v0.1.0 <GOBIN PATH>/terraform-provider-saviynt
+chmod +x GOBIN/terraform-provider-saviynt
 
 ```
 
@@ -186,20 +189,36 @@ output "systems" {
 }
 ```
 
+For inputs that require JSON config, you can give the values as in the given example:
+```sh
+create_account_json = jsonencode({
+    "cn" : "$${cn}",
+    "displayname" : "$${user.displayname}",
+    "givenname" : "$${user.firstname}",
+    "mail" : "$${user.email}",
+    "name" : "$${user.displayname}",
+    "objectClass" : ["top", "person", "organizationalPerson", "user"],
+    "userAccountControl" : "544",
+    "sAMAccountName" : "$${task.accountName}",
+    "sn" : "$${user.lastname}",
+    "title" : "$${user.title}"
+  })
+```
+
 ---
 
 ##  Available Resources
 
 ###  Resource
 
-- [saviynt_security_system_resource](docs/resources/resource_security_system.md): Manages lifecycle (create, update, read) of security systems. Supports workflows, connectors, password policies and more.
-- [saviynt_endpoints_resource](docs/resources/resource_endpoint.md): For managing endpoints definitions used by security systems.
-- [saviynt_ad_connection_resource](docs/resources/resource_ad_connection.md): For managing AD connections.
-- [saviynt_rest_connection_resource](docs/resources/resource_rest_connection.md): For managing REST connections.
+- [saviynt_security_system_resource](docs/resources/security_system_resource.md): Manages lifecycle (create, update, read) of security systems. Supports workflows, connectors, password policies and more.
+- [saviynt_endpoints_resource](docs/resources/endpoint_resource.md): For managing endpoints definitions used by security systems.
+- [saviynt_ad_connection_resource](docs/resources/ad_connection_resource.md): For managing AD connections.
+- [saviynt_rest_connection_resource](docs/resources/rest_connection_resource.md): For managing REST connections.
 
 ###  Data Source
 
-- [saviynt_security_systems_datasource](docs/data-sources/datasource_security_systems.md): Retrieves a list of configured security systems filtered by systemname, connection_type, etc.
+- [saviynt_security_systems_datasource](docs/data-sources/security_systems_datasource.md): Retrieves a list of configured security systems filtered by systemname, connection_type, etc.
 - [saviynt_datasource_endpoints](docs/data-sources/datasource_endpoints.md): Retrieves a list of endpoints.
 
 ---
@@ -240,7 +259,7 @@ terraform workspaces select <workspace-name>
 terraform apply -var-file="<values.tfvars>"
 ```
 
-Here is a sample invocation example:
+##### Here is a sample invocation example:
 ```bash
 terraform apply -var-file="dev.tfvars"
 ```
