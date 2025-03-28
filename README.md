@@ -61,6 +61,9 @@ Following connectors are available:
 └── resources
     ├── connections
     │   ├── ad_sample_connector.tf
+    │   ├── adsi_sample_connector.tf
+    │   ├── db_sample_connector.tf
+    │   ├── rest_sample_connector.tf
     │   └── variables.tf
     ├── endpoints
     │   └── sample_endpoint.tf
