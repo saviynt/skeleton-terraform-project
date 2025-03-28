@@ -22,6 +22,8 @@ Following resources are available for management:
 Following connectors are available:
 - Active Directory(AD)
 - REST
+- ADSI
+- Database(DB)
 
 ---
 
