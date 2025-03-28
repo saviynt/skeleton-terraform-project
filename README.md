@@ -37,6 +37,8 @@ Following connectors are available:
 │   ├── index.md
 │   └── resources
 │       ├── ad_connection_resource.md
+│       ├── adsi_connection_resource.md
+│       ├── db_connection_resource.md
 │       ├── endpoint_resource.md
 │       ├── rest_connection_resource.md
 │       └── security_system_resource.md
@@ -54,13 +56,11 @@ Following connectors are available:
 │       ├── test.tfvars
 │       └── variable.tf
 ├── provider
-│   └── terraform-provider-saviynt_v0.1.0
+│   └── terraform-provider-saviynt_v0.1.1
 ├── provider.tf
 └── resources
     ├── connections
     │   ├── ad_sample_connector.tf
-    │   ├── terraform.tfstate
-    │   ├── terraform.tfvars
     │   └── variables.tf
     ├── endpoints
     │   └── sample_endpoint.tf
@@ -117,7 +117,7 @@ To use this provider, follow these steps:
 Copy the provider binary from provider directory to the Go bin directory: 
 
 ```sh
-cp provider/terraform-provider-saviynt_v0.1.0 <GOBIN PATH>/terraform-provider-saviynt
+cp provider/terraform-provider-saviynt_v0.1.1 <GOBIN PATH>/terraform-provider-saviynt
 chmod +x GOBIN/terraform-provider-saviynt
 
 ```
@@ -204,6 +204,7 @@ create_account_json = jsonencode({
     "title" : "$${user.title}"
   })
 ```
+As in the above example, to pass special characters like `$`, we have to use `$$` instead and for json data, use the `jsonencode()` function to properly pass the data using terraform.
 
 ---
 
@@ -215,6 +216,8 @@ create_account_json = jsonencode({
 - [saviynt_endpoints_resource](docs/resources/endpoint_resource.md): For managing endpoints definitions used by security systems.
 - [saviynt_ad_connection_resource](docs/resources/ad_connection_resource.md): For managing AD connections.
 - [saviynt_rest_connection_resource](docs/resources/rest_connection_resource.md): For managing REST connections.
+- [saviynt_adsi_connection_resource](docs/resources/adsi_connection_resource.md): For managing ADSI connections.
+- [saviynt_db_connection_resource](docs/resources/db_connection_resource.md): For managing DB connections.
 
 ###  Data Source
 
